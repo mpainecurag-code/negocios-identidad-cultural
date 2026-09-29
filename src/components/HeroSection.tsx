@@ -48,7 +48,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore4S, onOpenCan
               CON IDENTIDAD CULTURAL:
             </span>
             <br />
-            <span className="bg-[#8C2415] text-white px-3 py-1 inline-block shadow-sm text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-nowrap">
+            <span className="bg-[#8C2415] text-white px-3 py-1 inline-block shadow-sm text-2xl sm:text-3xl md:text-4xl lg:text-5xl sm:whitespace-nowrap">
               "Viabilidad sin perder la memoria"
             </span>
           </h1>
