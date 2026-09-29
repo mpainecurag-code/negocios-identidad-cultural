@@ -21,7 +21,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore4S, onOpenCan
           referrerPolicy="no-referrer"
           onError={(e) => {
             // Fallback to local image if remote image fails
-            (e.currentTarget as HTMLImageElement).src = '/src/assets/images/hero_craft_workshop_1790554698993.jpg';
+            (e.currentTarget as HTMLImageElement).src = '/images/hero_craft_workshop_1790554698993.jpg';
           }}
         />
 

@@ -1,10 +1,10 @@
 import { FourSPillar, VeiStage, CaseStudy, GlossaryTerm, CulturalBusinessProposal } from '../types';
 
 export const HERO_IMAGE = 'https://mercadomapuche.cl/wp-content/uploads/2024/11/post-3-pinon.jpg';
-export const CASE_NAGCHE_IMAGE = '/src/assets/images/case_nagche_weaving_1790554708941.jpg';
-export const CASE_PEWENCHE_IMAGE = '/src/assets/images/case_pewenche_cosmetics_1790554719654.jpg';
-export const CASE_LAFKENCHE_IMAGE = '/src/assets/images/case_lafkenche_coast_1790554729600.jpg';
-export const MANIFESTO_IMAGE = '/src/assets/images/manifesto_community_earth_1790554739400.jpg';
+export const CASE_NAGCHE_IMAGE = '/images/case_nagche_weaving_1790554708941.jpg';
+export const CASE_PEWENCHE_IMAGE = '/images/case_pewenche_cosmetics_1790554719654.jpg';
+export const CASE_LAFKENCHE_IMAGE = '/images/case_lafkenche_coast_1790554729600.jpg';
+export const MANIFESTO_IMAGE = '/images/manifesto_community_earth_1790554739400.jpg';
 
 export const FOUR_S_DATA: FourSPillar[] = [
   {
