@@ -1,66 +1,85 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: 'Merriweather', Georgia, Cambria, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --color-survival-red: #8C2415;
-  --color-survival-darkred: #701B0F;
-  --color-survival-yellow: #F5A623;
-  --color-survival-black: #141414;
-  --color-survival-charcoal: #222222;
-  --color-survival-offwhite: #F6F5F2;
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --color-verde: #69826a;
+  --color-verde-bosque: #4f6650;
+  --color-carbon: #222222;
+  --color-beige: #d9c6a5;
+  --color-crema: #FBF9F5;
 }
 
 @layer base {
   body {
     font-family: var(--font-sans);
-    background-color: #F6F5F2;
-    color: #141414;
+    background-color: #FBF9F5;
+    color: #222222;
+    font-weight: 400;
     letter-spacing: -0.01em;
   }
-  h1, h2, h3, h4, .font-serif {
-    font-family: var(--font-serif);
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    font-weight: 800;
     letter-spacing: -0.02em;
   }
 }
 
-/* Survival.es distinct tape / highlight boxes */
-.survival-tape {
-  background-color: #141414;
+/* Card system */
+.card-principal {
+  background-color: #FFFFFF;
+  border: 2px solid #d9c6a5;
+  border-radius: 24px;
+  box-shadow: 0 1px 3px rgba(34, 34, 34, 0.05);
+}
+
+.card-secundaria {
+  background-color: #FBF9F5;
+  border: 1px solid #d9c6a5;
+  border-radius: 16px;
+}
+
+/* Pill / badge system */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pill-verde {
+  background-color: #69826a;
   color: #FFFFFF;
-  display: inline-block;
-  padding: 0.15em 0.5em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
 }
 
-.survival-tape-red {
-  background-color: #8C2415;
+.pill-bosque {
+  background-color: #4f6650;
   color: #FFFFFF;
-  display: inline-block;
-  padding: 0.15em 0.5em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
 }
 
-.survival-tape-yellow {
-  background-color: #F5A623;
-  color: #141414;
-  display: inline-block;
-  padding: 0.15em 0.5em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+.pill-carbon {
+  background-color: #222222;
+  color: #FFFFFF;
 }
 
-.craft-border {
-  border: 1px solid rgba(20, 20, 20, 0.15);
+.pill-beige {
+  background-color: #d9c6a5;
+  color: #222222;
 }
 
-.craft-border-strong {
-  border: 2px solid #141414;
+.pill-outline {
+  background-color: transparent;
+  border: 1.5px solid #d9c6a5;
+  color: #222222;
 }
 
-.transition-atmospheric {
+/* Smooth transitions */
+.transition-organic {
   transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 

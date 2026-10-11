@@ -21,10 +21,10 @@ export const FOUR_S_DATA: FourSPillar[] = [
       '¿El proceso de elaboración respeta el ritmo humano y el bienestar de los creadores?'
     ],
     color: {
-      bg: 'bg-[#E5EFE9]',
-      border: 'border-[#A3C8B3]',
-      text: 'text-[#1E4D36]',
-      accent: 'text-[#2E654A]'
+      bg: 'bg-[#69826a]/10',
+      border: 'border-[#69826a]',
+      text: 'text-[#69826a]',
+      accent: 'text-[#4f6650]'
     }
   },
   {
@@ -41,10 +41,10 @@ export const FOUR_S_DATA: FourSPillar[] = [
       '¿Tu producción honra las estaciones y tiempos biológicos sin forzar a la tierra?'
     ],
     color: {
-      bg: 'bg-[#DCE8E0]',
-      border: 'border-[#9BBCA5]',
-      text: 'text-[#143522]',
-      accent: 'text-[#1B432C]'
+      bg: 'bg-[#4f6650]/10',
+      border: 'border-[#4f6650]',
+      text: 'text-[#4f6650]',
+      accent: 'text-[#69826a]'
     }
   },
   {
@@ -61,10 +61,10 @@ export const FOUR_S_DATA: FourSPillar[] = [
       '¿Tu cliente comprende el valor del territorio del cual nace tu propuesta?'
     ],
     color: {
-      bg: 'bg-[#F9EAE4]',
-      border: 'border-[#DDB0A1]',
-      text: 'text-[#672513]',
-      accent: 'text-[#963D24]'
+      bg: 'bg-[#d9c6a5]/20',
+      border: 'border-[#d9c6a5]',
+      text: 'text-[#8a7352]',
+      accent: 'text-[#6b5a3e]'
     }
   },
   {
@@ -81,10 +81,10 @@ export const FOUR_S_DATA: FourSPillar[] = [
       '¿El trabajo genera orgullo y dignidad en tu familia y comunidad?'
     ],
     color: {
-      bg: 'bg-[#FBF2E3]',
-      border: 'border-[#E2C392]',
-      text: 'text-[#7D4609]',
-      accent: 'text-[#B86B18]'
+      bg: 'bg-[#222222]/5',
+      border: 'border-[#222222]',
+      text: 'text-[#222222]',
+      accent: 'text-[#555555]'
     }
   }
 ];

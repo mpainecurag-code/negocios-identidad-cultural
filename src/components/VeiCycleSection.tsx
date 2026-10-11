@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { VEI_DATA, FOUR_S_DATA } from '../data/initialData';
 import { VeiStageId, PillarId } from '../types';
-import { Compass, ShieldCheck, Megaphone, ArrowRight } from 'lucide-react';
+import { Compass, ShieldCheck, Store, ArrowRight } from 'lucide-react';
 
-export const VeiCycleSection: React.FC = () => {
+export const VeiCycleSection = () => {
   const [activeStageId, setActiveStageId] = useState<VeiStageId>('identidad');
   const [matrixSelectedS, setMatrixSelectedS] = useState<PillarId>('simbolico');
   const [matrixSelectedVei, setMatrixSelectedVei] = useState<VeiStageId>('valoracion');
@@ -17,7 +17,7 @@ export const VeiCycleSection: React.FC = () => {
       case 'empoderamiento':
         return <ShieldCheck className="w-5 h-5" />;
       case 'valoracion':
-        return <Megaphone className="w-5 h-5" />;
+        return <Store className="w-5 h-5" />;
     }
   };
 
@@ -89,24 +89,42 @@ export const VeiCycleSection: React.FC = () => {
   const selectedVeiObj = VEI_DATA.find((v) => v.id === matrixSelectedVei);
 
   return (
-    <section id="ciclo-vei" className="py-20 md:py-28 border-b-2 border-[#141414] bg-[#F6F5F2]">
+    <section id="ciclo-vei" className="py-20 md:py-28 border-b border-[#d9c6a5] bg-[#FBF9F5]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         
         {/* Curatorial Header */}
         <div className="max-w-3xl mb-14">
           <div className="mb-4">
-            <span className="bg-[#141414] text-[#F5A623] px-3 py-1 text-xs uppercase tracking-widest font-mono font-bold">
+            <span className="bg-[#69826a] text-white px-3 py-1 text-[10px] sm:text-xs uppercase tracking-wider font-sans font-bold rounded-full">
               02 / Estrategia Dinámica
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-serif font-black text-[#141414] tracking-tight text-balance mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-sans font-extrabold uppercase tracking-wide text-[#222222] text-balance mb-6 leading-tight">
             Identidad, Empoderamiento y Valoración en movimiento continuo.
           </h2>
 
-          <p className="text-[#333333] leading-relaxed text-base sm:text-lg font-sans">
+          <p className="text-[#555555] leading-relaxed text-base sm:text-lg font-sans">
             El modelo V.E.I. no es un trámite lineal, sino una espiral de maduración comunitaria: descubrimos quiénes somos, nos capacitamos para sostener esa promesa y nos presentamos con honestidad ante un mercado consciente.
           </p>
+        </div>
+
+        {/* Visual V.E.I. */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12">
+          <div className="flex flex-col items-center">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#69826a] flex items-center justify-center text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider">01<br/>Identidad</div>
+            <span className="text-[10px] sm:text-xs text-[#555555] mt-2 font-medium">¿Quiénes somos?</span>
+          </div>
+          <svg className="w-8 h-4 sm:w-12 sm:h-5 text-[#d9c6a5] rotate-90 sm:rotate-0 shrink-0" viewBox="0 0 48 20" fill="none"><path d="M0 10h40M34 3l8 7-8 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <div className="flex flex-col items-center">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#d9c6a5] flex items-center justify-center text-[#222222] font-extrabold text-xs sm:text-sm uppercase tracking-wider">02<br/>Empoderamiento</div>
+            <span className="text-[10px] sm:text-xs text-[#555555] mt-2 font-medium">¿Cómo nos fortalecemos?</span>
+          </div>
+          <svg className="w-8 h-4 sm:w-12 sm:h-5 text-[#d9c6a5] rotate-90 sm:rotate-0 shrink-0" viewBox="0 0 48 20" fill="none"><path d="M0 10h40M34 3l8 7-8 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <div className="flex flex-col items-center">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#222222] flex items-center justify-center text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider">03<br/>Valoración</div>
+            <span className="text-[10px] sm:text-xs text-[#555555] mt-2 font-medium">¿Cómo salimos al mercado?</span>
+          </div>
         </div>
 
         {/* 3 Phases: High Contrast Split Grid */}
@@ -117,27 +135,27 @@ export const VeiCycleSection: React.FC = () => {
               <button
                 key={stage.id}
                 onClick={() => setActiveStageId(stage.id)}
-                className={`p-7 text-left transition-colors cursor-pointer border-2 flex flex-col justify-between ${
+                className={`p-7 text-left transition-colors cursor-pointer border-2 rounded-3xl flex flex-col justify-between ${
                   isSelected 
-                    ? 'bg-[#141414] text-white border-[#141414] shadow-md' 
-                    : 'bg-white text-[#141414] border-[#141414]/20 hover:border-[#8C2415] hover:bg-neutral-50'
+                    ? 'bg-[#222222] text-white border-[#222222] shadow-md' 
+                    : 'bg-white text-[#222222] border-[#d9c6a5] hover:border-[#69826a] hover:bg-[#FBF9F5]'
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs font-mono mb-4 pb-3 border-b border-neutral-200/40">
-                    <span className={isSelected ? 'text-[#F5A623] font-bold' : 'text-[#8C2415] font-bold'}>
+                  <div className="flex items-center justify-between text-xs font-sans tracking-wider mb-4 pb-3 border-b border-[#d9c6a5]/40">
+                    <span className={isSelected ? 'text-[#d9c6a5] font-bold' : 'text-[#69826a] font-bold'}>
                       ETAPA 0{idx + 1}
                     </span>
-                    <span className={isSelected ? 'text-[#F5A623]' : 'text-[#141414]'}>
+                    <span className={isSelected ? 'text-[#d9c6a5]' : 'text-[#222222]'}>
                       {getStageIcon(stage.id)}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-serif font-black mb-2">
+                  <h3 className="text-2xl font-sans font-extrabold uppercase tracking-wide mb-2">
                     {stage.name}
                   </h3>
 
-                  <div className={`text-sm font-serif italic mb-3 font-semibold ${isSelected ? 'text-[#F5A623]' : 'text-[#8C2415]'}`}>
+                  <div className={`text-sm font-sans italic mb-3 font-medium ${isSelected ? 'text-[#d9c6a5]' : 'text-[#69826a]'}`}>
                     {stage.leadQuestion}
                   </div>
 
@@ -146,9 +164,9 @@ export const VeiCycleSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-neutral-200/20 flex items-center justify-between text-xs font-mono font-bold uppercase tracking-wider">
+                <div className="mt-6 pt-4 border-t border-[#d9c6a5]/20 flex items-center justify-between text-xs font-sans font-bold uppercase tracking-wider">
                   <span>{isSelected ? 'Etapa Activa' : 'Ver Acciones'}</span>
-                  <ArrowRight className={`w-3.5 h-3.5 ${isSelected ? 'text-[#F5A623]' : 'text-[#8C2415]'}`} />
+                  <ArrowRight className={`w-3.5 h-3.5 ${isSelected ? 'text-[#d9c6a5]' : 'text-[#69826a]'}`} />
                 </div>
               </button>
             );
@@ -156,26 +174,26 @@ export const VeiCycleSection: React.FC = () => {
         </div>
 
         {/* Deep Stage Focus */}
-        <div className="p-8 sm:p-12 bg-white border-2 border-[#141414] shadow-sm mb-24">
+        <div className="p-8 sm:p-12 bg-white rounded-3xl border-2 border-[#d9c6a5] shadow-sm mb-24">
           <div className="max-w-3xl mb-8">
-            <span className="bg-[#8C2415] text-white px-2.5 py-1 text-xs font-mono uppercase tracking-widest font-bold inline-block mb-3">
+            <span className="bg-[#69826a] text-white px-3 py-1 text-[10px] sm:text-xs font-sans uppercase tracking-wider font-bold inline-block mb-3 rounded-full">
               Enfoque Activo · {activeStage.name}
             </span>
-            <h4 className="text-2xl sm:text-3xl font-serif font-black text-[#141414] mb-3">
+            <h4 className="text-2xl sm:text-3xl font-sans font-extrabold uppercase tracking-wide text-[#222222] mb-3">
               {activeStage.leadQuestion}
             </h4>
-            <p className="text-[#333333] text-lg font-sans leading-relaxed">
+            <p className="text-[#555555] text-lg font-sans leading-relaxed">
               {activeStage.guidePrompt}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t-2 border-[#141414]/15">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-[#d9c6a5]">
             {activeStage.actions.map((act, i) => (
-              <div key={i} className="p-6 bg-[#F6F5F2] border-2 border-[#141414] border-l-8 border-l-[#8C2415]">
-                <h5 className="text-xs uppercase tracking-widest font-black text-[#141414] mb-2 font-mono">
+              <div key={i} className="p-6 bg-[#FBF9F5] rounded-2xl border-2 border-[#d9c6a5] border-l-8 border-l-[#69826a]">
+                <h5 className="text-xs uppercase tracking-wider font-black text-[#222222] mb-2 font-sans">
                   {act.title}
                 </h5>
-                <p className="text-sm text-[#444444] font-sans leading-relaxed">
+                <p className="text-sm text-[#555555] font-sans leading-relaxed">
                   {act.description}
                 </p>
               </div>
@@ -187,16 +205,16 @@ export const VeiCycleSection: React.FC = () => {
         <div id="matriz-integrada" className="pt-4">
           <div className="max-w-3xl mb-12">
             <div className="mb-4">
-              <span className="bg-[#141414] text-[#F5A623] px-3 py-1 text-xs uppercase tracking-widest font-mono font-bold">
+              <span className="bg-[#222222] text-[#d9c6a5] px-3 py-1 text-[10px] sm:text-xs uppercase tracking-wider font-sans font-bold rounded-full">
                 El Telar Táctico
               </span>
             </div>
 
-            <h3 className="text-3xl sm:text-4xl font-serif font-black text-[#141414] tracking-tight mb-4">
+            <h3 className="text-3xl sm:text-4xl font-sans font-extrabold uppercase tracking-wide text-[#222222] tracking-tight mb-4">
               La Matriz Táctica: Donde cada pilar cobra acción real.
             </h3>
 
-            <p className="text-[#333333] text-base leading-relaxed font-sans">
+            <p className="text-[#555555] text-base leading-relaxed font-sans">
               Selecciona un pilar innegociable de la urdimbre (4S) y una fase estratégica de la trama (V.E.I.) para explorar la acción concreta que une el pensamiento ético con la viabilidad comercial.
             </p>
           </div>
@@ -207,8 +225,8 @@ export const VeiCycleSection: React.FC = () => {
             <div className="lg:col-span-5 space-y-6">
               
               {/* Urdimbre (4S) */}
-              <div className="p-6 bg-white border-2 border-[#141414]">
-                <span className="text-xs uppercase tracking-widest font-black text-[#141414] block mb-3 font-mono">
+              <div className="p-6 bg-white rounded-3xl border-2 border-[#d9c6a5]">
+                <span className="text-xs uppercase tracking-wider font-black text-[#222222] block mb-3 font-sans">
                   1. Urdimbre / Pilar Innegociable (4S)
                 </span>
                 <div className="grid grid-cols-2 gap-3">
@@ -218,14 +236,14 @@ export const VeiCycleSection: React.FC = () => {
                       <button
                         key={p.id}
                         onClick={() => setMatrixSelectedS(p.id)}
-                        className={`p-3.5 text-left transition-colors cursor-pointer border-2 ${
+                        className={`p-3.5 text-left transition-colors cursor-pointer border-2 rounded-2xl ${
                           active
-                            ? 'bg-[#141414] text-white border-[#141414]'
-                            : 'bg-[#F6F5F2] text-[#141414] border-[#141414]/20 hover:border-[#8C2415]'
+                            ? 'bg-[#222222] text-white border-[#222222]'
+                            : 'bg-[#FBF9F5] text-[#222222] border-[#d9c6a5] hover:border-[#69826a]'
                         }`}
                       >
-                        <div className="font-serif font-black text-sm">{p.name}</div>
-                        <div className={`text-xs italic truncate font-sans font-medium ${active ? 'text-[#F5A623]' : 'text-[#8C2415]'}`}>
+                        <div className="font-sans font-extrabold uppercase tracking-wide text-sm">{p.name}</div>
+                        <div className={`text-xs italic truncate font-sans font-medium mt-1 ${active ? 'text-[#d9c6a5]' : 'text-[#69826a]'}`}>
                           {p.ancestralName}
                         </div>
                       </button>
@@ -235,8 +253,8 @@ export const VeiCycleSection: React.FC = () => {
               </div>
 
               {/* Trama (VEI) */}
-              <div className="p-6 bg-white border-2 border-[#141414]">
-                <span className="text-xs uppercase tracking-widest font-black text-[#141414] block mb-3 font-mono">
+              <div className="p-6 bg-white rounded-3xl border-2 border-[#d9c6a5]">
+                <span className="text-xs uppercase tracking-wider font-black text-[#222222] block mb-3 font-sans">
                   2. Trama / Movimiento Estratégico (V.E.I.)
                 </span>
                 <div className="grid grid-cols-3 gap-2.5">
@@ -246,14 +264,14 @@ export const VeiCycleSection: React.FC = () => {
                       <button
                         key={v.id}
                         onClick={() => setMatrixSelectedVei(v.id)}
-                        className={`py-3 px-2 text-center transition-colors cursor-pointer border-2 ${
+                        className={`py-3 px-2 text-center transition-colors cursor-pointer border-2 rounded-full ${
                           active
-                            ? 'bg-[#8C2415] text-white border-[#8C2415]'
-                            : 'bg-[#F6F5F2] text-[#141414] border-[#141414]/20 hover:border-[#8C2415]'
+                            ? 'bg-[#69826a] text-white border-[#69826a]'
+                            : 'bg-[#FBF9F5] text-[#222222] border-[#d9c6a5] hover:border-[#69826a]'
                         }`}
                       >
-                        <div className="font-bold text-xs uppercase tracking-wider">{v.name}</div>
-                        <div className={`text-[10px] mt-0.5 truncate font-serif italic ${active ? 'text-white/90' : 'text-[#555555]'}`}>
+                        <div className="font-bold text-[10px] sm:text-xs uppercase tracking-wider">{v.name}</div>
+                        <div className={`hidden sm:block text-[10px] mt-0.5 truncate font-sans italic ${active ? 'text-white/90' : 'text-[#555555]'}`}>
                           {v.leadQuestion}
                         </div>
                       </button>
@@ -265,36 +283,36 @@ export const VeiCycleSection: React.FC = () => {
             </div>
 
             {/* Hand-Stamped Workshop Note */}
-            <div className="lg:col-span-7 p-8 sm:p-10 bg-white border-2 border-[#141414] shadow-sm relative">
-              <div className="flex items-center justify-between text-xs text-[#141414] font-mono pb-4 border-b-2 border-[#141414] mb-6">
+            <div className="lg:col-span-7 p-8 sm:p-10 bg-white rounded-3xl border-2 border-[#d9c6a5] shadow-sm relative">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#222222] font-sans pb-4 border-b border-[#d9c6a5] mb-6 gap-3">
                 <span className="font-bold uppercase tracking-wider">PLIEGO DE TELAR TÁCTICO</span>
-                <span className="bg-[#F5A623] text-black font-extrabold px-2 py-0.5 uppercase tracking-wider">
+                <span className="bg-[#d9c6a5] text-[#222222] font-extrabold px-3 py-1 uppercase tracking-wider rounded-full text-center">
                   {selectedPillarObj?.name} × {selectedVeiObj?.name}
                 </span>
               </div>
 
               <div className="space-y-6">
                 <div>
-                  <span className="text-xs uppercase tracking-widest font-black text-[#8C2415] block mb-2 font-mono">
+                  <span className="text-xs uppercase tracking-wider font-black text-[#69826a] block mb-2 font-sans">
                     Acción Estratégica en el Taller
                   </span>
-                  <p className="text-xl sm:text-2xl font-serif font-black text-[#141414] leading-relaxed">
+                  <p className="text-xl sm:text-2xl font-sans font-extrabold text-[#222222] leading-relaxed">
                     {currentIntersection.action}
                   </p>
                 </div>
 
-                <div className="p-6 bg-[#F6F5F2] border-2 border-[#141414] border-l-8 border-l-[#8C2415]">
-                  <span className="text-xs uppercase tracking-widest font-black text-[#141414] block mb-1 font-mono">
+                <div className="p-6 bg-[#FBF9F5] rounded-2xl border-2 border-[#d9c6a5] border-l-8 border-l-[#69826a]">
+                  <span className="text-xs uppercase tracking-wider font-black text-[#222222] block mb-1 font-sans">
                     Caso de Aplicación en la Práctica Territorial
                   </span>
-                  <p className="text-base text-[#333333] font-sans leading-relaxed">
+                  <p className="text-base text-[#555555] font-sans leading-relaxed">
                     "{currentIntersection.example}"
                   </p>
                 </div>
 
-                <div className="pt-4 border-t-2 border-[#141414]/15 flex items-center justify-between text-xs text-[#555555] font-mono">
-                  <span>Urdimbre: <strong>{selectedPillarObj?.ancestralName}</strong></span>
-                  <span>Trama: <strong>{selectedVeiObj?.leadQuestion}</strong></span>
+                <div className="pt-4 border-t border-[#d9c6a5] flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-[#555555] font-sans tracking-wider gap-2">
+                  <span>Urdimbre: <strong className="text-[#222222]">{selectedPillarObj?.ancestralName}</strong></span>
+                  <span>Trama: <strong className="text-[#222222]">{selectedVeiObj?.leadQuestion}</strong></span>
                 </div>
               </div>
             </div>

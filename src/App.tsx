@@ -52,7 +52,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F6F5F2] text-[#141414] flex flex-col font-sans selection:bg-[#F5A623] selection:text-black">
+    <div className="min-h-screen bg-[#FBF9F5] text-[#222222] flex flex-col font-sans selection:bg-[#69826a] selection:text-white">
       <Header 
         onNavigate={scrollTo} 
         onOpenCanvas={handleOpenCanvas} 
