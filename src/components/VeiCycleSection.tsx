@@ -109,23 +109,6 @@ export const VeiCycleSection = () => {
           </p>
         </div>
 
-        {/* Visual V.E.I. */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12">
-          <div className="flex flex-col items-center">
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#69826a] flex items-center justify-center text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider">01<br/>Identidad</div>
-            <span className="text-[10px] sm:text-xs text-[#555555] mt-2 font-medium">¿Quiénes somos?</span>
-          </div>
-          <svg className="w-8 h-4 sm:w-12 sm:h-5 text-[#d9c6a5] rotate-90 sm:rotate-0 shrink-0" viewBox="0 0 48 20" fill="none"><path d="M0 10h40M34 3l8 7-8 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          <div className="flex flex-col items-center">
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#d9c6a5] flex items-center justify-center text-[#222222] font-extrabold text-xs sm:text-sm uppercase tracking-wider">02<br/>Empoderamiento</div>
-            <span className="text-[10px] sm:text-xs text-[#555555] mt-2 font-medium">¿Cómo nos fortalecemos?</span>
-          </div>
-          <svg className="w-8 h-4 sm:w-12 sm:h-5 text-[#d9c6a5] rotate-90 sm:rotate-0 shrink-0" viewBox="0 0 48 20" fill="none"><path d="M0 10h40M34 3l8 7-8 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          <div className="flex flex-col items-center">
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#222222] flex items-center justify-center text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider">03<br/>Valoración</div>
-            <span className="text-[10px] sm:text-xs text-[#555555] mt-2 font-medium">¿Cómo salimos al mercado?</span>
-          </div>
-        </div>
 
         {/* 3 Phases: High Contrast Split Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
