@@ -110,51 +110,31 @@ export const VeiCycleSection = () => {
         </div>
 
 
-        {/* 3 Phases: High Contrast Split Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {/* 3 Phases */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-12">
           {VEI_DATA.map((stage, idx) => {
             const isSelected = stage.id === activeStageId;
             return (
               <button
                 key={stage.id}
                 onClick={() => setActiveStageId(stage.id)}
-                className={`p-7 text-left transition-colors cursor-pointer border-2 rounded-3xl flex flex-col justify-between ${
+                className={`px-5 py-8 sm:py-10 text-center transition-colors cursor-pointer border-2 rounded-3xl overflow-hidden ${
                   isSelected 
-                    ? 'bg-[#222222] text-white border-[#222222] shadow-md' 
+                    ? 'bg-[#69826a] text-white border-[#69826a] shadow-md' 
                     : 'bg-white text-[#222222] border-[#d9c6a5] hover:border-[#69826a] hover:bg-[#FBF9F5]'
                 }`}
               >
-                <div>
-                  <div className="flex items-center justify-between text-xs font-sans tracking-wider mb-4 pb-3 border-b border-[#d9c6a5]/40">
-                    <span className={isSelected ? 'text-[#d9c6a5] font-bold' : 'text-[#69826a] font-bold'}>
-                      ETAPA 0{idx + 1}
-                    </span>
-                    <span className={isSelected ? 'text-[#d9c6a5]' : 'text-[#222222]'}>
-                      {getStageIcon(stage.id)}
-                    </span>
-                  </div>
-
-                  <h3 className="text-2xl font-sans font-extrabold uppercase tracking-wide mb-2">
-                    {stage.name}
-                  </h3>
-
-                  <div className={`text-sm font-sans italic mb-3 font-medium ${isSelected ? 'text-[#d9c6a5]' : 'text-[#69826a]'}`}>
-                    {stage.leadQuestion}
-                  </div>
-
-                  <p className={`text-xs leading-relaxed font-sans ${isSelected ? 'text-white/80' : 'text-[#555555]'}`}>
-                    {stage.role}
-                  </p>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-[#d9c6a5]/20 flex items-center justify-between text-xs font-sans font-bold uppercase tracking-wider">
-                  <span>{isSelected ? 'Etapa Activa' : 'Ver Acciones'}</span>
-                  <ArrowRight className={`w-3.5 h-3.5 ${isSelected ? 'text-[#d9c6a5]' : 'text-[#69826a]'}`} />
-                </div>
+                <h3 className="text-base sm:text-lg font-sans font-extrabold uppercase tracking-wide mb-1 break-words hyphens-auto">
+                  {stage.name} ({stage.id === 'identidad' ? 'I' : stage.id === 'empoderamiento' ? 'E' : 'V'})
+                </h3>
+                <p className={`text-xs sm:text-sm font-sans italic font-medium ${isSelected ? 'text-white/85' : 'text-[#69826a]'}`}>
+                  {stage.leadQuestion}
+                </p>
               </button>
             );
           })}
         </div>
+
 
         {/* Deep Stage Focus */}
         <div className="p-8 sm:p-12 bg-white rounded-3xl border-2 border-[#d9c6a5] shadow-sm mb-24">
