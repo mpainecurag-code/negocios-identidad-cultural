@@ -10,7 +10,7 @@ import { FourSPillarsSection } from './components/FourSPillarsSection';
 import { VeiCycleSection } from './components/VeiCycleSection';
 import { CaseStudiesSection } from './components/CaseStudiesSection';
 import { CanvasBuilder } from './components/CanvasBuilder';
-import { GlossarySection } from './components/GlossarySection';
+
 import { ConclusionManifesto } from './components/ConclusionManifesto';
 import { Footer } from './components/Footer';
 import { CulturalBusinessProposal } from './types';
@@ -78,7 +78,6 @@ export default function App() {
           onReset={handleResetProposal} 
         />
 
-        <GlossarySection />
 
         <ConclusionManifesto 
           onOpenCanvas={handleOpenCanvas} 

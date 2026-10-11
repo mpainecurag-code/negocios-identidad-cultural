@@ -51,12 +51,7 @@ export const Footer = ({ onNavigate }: FooterProps) => {
             >
               Pliego de Taller
             </button>
-            <button 
-              onClick={() => onNavigate('glosario-kimun')} 
-              className="hover:text-[#69826a] transition-colors cursor-pointer"
-            >
-              Glosario
-            </button>
+
           </div>
         </div>
 

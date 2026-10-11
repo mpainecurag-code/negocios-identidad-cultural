@@ -66,12 +66,6 @@ export const Header = ({ onNavigate, onOpenCanvas }: HeaderProps) => {
           >
             Casos de Estudio
           </button>
-          <button 
-            onClick={() => handleNavClick('glosario-kimun')} 
-            className="hover:text-[#69826a] hover:underline underline-offset-8 decoration-2 decoration-[#69826a] transition-colors cursor-pointer py-1"
-          >
-            Glosario Kimün
-          </button>
         </nav>
 
         {/* Zone 3: Primary action button and mobile toggle */}
@@ -125,12 +119,7 @@ export const Header = ({ onNavigate, onOpenCanvas }: HeaderProps) => {
           >
             Casos de Estudio
           </button>
-          <button 
-            onClick={() => handleNavClick('glosario-kimun')} 
-            className="block w-full text-left text-sm uppercase tracking-wider font-bold text-[#222222] hover:text-[#69826a] py-2 transition-colors"
-          >
-            Glosario Kimün
-          </button>
+
         </div>
       )}
     </header>
