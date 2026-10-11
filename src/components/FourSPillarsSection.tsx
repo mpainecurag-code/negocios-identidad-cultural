@@ -134,78 +134,91 @@ export const FourSPillarsSection = () => {
           </div>
         </div>
 
-        {/* EXPANDED DETAIL — appears when a card is clicked */}
+        {/* MODAL — ventana emergente al hacer clic en una tarjeta */}
         {activePillar && (
-          <div className="bg-[#FBF9F5] rounded-3xl border-2 border-[#d9c6a5] p-8 sm:p-12 shadow-sm mb-10 animate-[fadeIn_0.3s_ease-out]">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+            {/* Backdrop */}
+            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setActivePillarId(null)} />
             
-            {/* Header */}
-            <div className="border-b border-[#d9c6a5] pb-6 mb-8 flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
-              <div>
-                <span className="bg-[#69826a] text-white px-3 py-1 text-[10px] sm:text-xs uppercase tracking-wider font-bold font-sans rounded-full inline-block mb-3">
+            {/* Modal Content */}
+            <div className="relative bg-[#FBF9F5] rounded-3xl border-2 border-[#d9c6a5] p-6 sm:p-10 shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+              
+              {/* Close button */}
+              <button
+                onClick={() => setActivePillarId(null)}
+                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#222222] text-white flex items-center justify-center hover:bg-[#69826a] transition-colors cursor-pointer text-lg font-bold"
+                aria-label="Cerrar"
+              >
+                ✕
+              </button>
+
+              {/* Header */}
+              <div className="border-b border-[#d9c6a5] pb-5 mb-6 pr-10">
+                <span className="bg-[#69826a] text-white px-3 py-1 text-[10px] sm:text-xs uppercase tracking-wider font-bold rounded-full inline-block mb-3">
                   Pilar 4S · {activePillar.name}
                 </span>
-                <h3 className="text-3xl sm:text-4xl font-sans font-extrabold uppercase tracking-wide text-[#222222]">
+                <h3 className="text-2xl sm:text-3xl font-sans font-extrabold uppercase tracking-wide text-[#222222] mb-2">
                   {activePillar.ancestralName}
                 </h3>
-              </div>
-              <div className="text-sm font-medium italic text-[#69826a] max-w-sm sm:text-right">
-                "{activePillar.phoneticMeaning}"
-              </div>
-            </div>
-
-            {/* ¿Qué significa en simple? */}
-            <div className="mb-8">
-              <span className="text-xs uppercase tracking-wider font-bold text-[#555555] block mb-2 font-sans">
-                ¿Qué significa en simple?
-              </span>
-              <p className="text-lg sm:text-xl font-sans font-semibold text-[#222222] leading-relaxed">
-                {activePillar.concept}
-              </p>
-            </div>
-
-            {/* Product & Community */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-[#d9c6a5] mb-8">
-              <div className="bg-white rounded-2xl p-6 border-2 border-[#d9c6a5]">
-                <div className="flex items-center gap-2 mb-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#69826a]" />
-                  <h4 className="text-xs uppercase tracking-wider font-extrabold text-[#222222] font-sans">
-                    En tu Producto o Servicio
-                  </h4>
-                </div>
-                <p className="text-sm text-[#555555] leading-relaxed font-sans">
-                  {activePillar.productApplication}
+                <p className="text-sm font-medium italic text-[#69826a]">
+                  "{activePillar.phoneticMeaning}"
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 border-2 border-[#d9c6a5]">
-                <div className="flex items-center gap-2 mb-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#69826a]" />
-                  <h4 className="text-xs uppercase tracking-wider font-extrabold text-[#222222] font-sans">
-                    En tu Proceso & Comunidad
-                  </h4>
-                </div>
-                <p className="text-sm text-[#555555] leading-relaxed font-sans">
-                  {activePillar.processApplication}
+              {/* ¿Qué significa en simple? */}
+              <div className="mb-6">
+                <span className="text-xs uppercase tracking-wider font-bold text-[#555555] block mb-2 font-sans">
+                  ¿Qué significa en simple?
+                </span>
+                <p className="text-base sm:text-lg font-sans font-semibold text-[#222222] leading-relaxed">
+                  {activePillar.concept}
                 </p>
               </div>
-            </div>
 
-            {/* Questions */}
-            <div className="p-6 bg-white rounded-2xl border-2 border-[#d9c6a5] border-l-8 border-l-[#69826a]">
-              <div className="flex items-center gap-2 text-xs uppercase tracking-wider font-extrabold text-[#222222] mb-4 font-sans">
-                <HelpCircle className="w-4 h-4 text-[#69826a]" />
-                <span>Interrogantes de Autenticidad para el Creador</span>
+              {/* Product & Community */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-5 border-t border-[#d9c6a5] mb-6">
+                <div className="bg-white rounded-2xl p-5 border-2 border-[#d9c6a5]">
+                  <div className="flex items-center gap-2 mb-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#69826a]" />
+                    <h4 className="text-xs uppercase tracking-wider font-extrabold text-[#222222] font-sans">
+                      En tu Producto o Servicio
+                    </h4>
+                  </div>
+                  <p className="text-sm text-[#555555] leading-relaxed font-sans">
+                    {activePillar.productApplication}
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-2xl p-5 border-2 border-[#d9c6a5]">
+                  <div className="flex items-center gap-2 mb-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#69826a]" />
+                    <h4 className="text-xs uppercase tracking-wider font-extrabold text-[#222222] font-sans">
+                      En tu Proceso & Comunidad
+                    </h4>
+                  </div>
+                  <p className="text-sm text-[#555555] leading-relaxed font-sans">
+                    {activePillar.processApplication}
+                  </p>
+                </div>
               </div>
-              <ul className="space-y-3">
-                {activePillar.guideQuestions.map((q, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-[#555555] font-sans leading-relaxed">
-                    <span className="bg-[#69826a] text-white px-2 py-0.5 rounded-full text-xs font-bold shrink-0 mt-0.5">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <span>{q}</span>
-                  </li>
-                ))}
-              </ul>
+
+              {/* Questions */}
+              <div className="p-5 bg-white rounded-2xl border-2 border-[#d9c6a5] border-l-8 border-l-[#69826a]">
+                <div className="flex items-center gap-2 text-xs uppercase tracking-wider font-extrabold text-[#222222] mb-3 font-sans">
+                  <HelpCircle className="w-4 h-4 text-[#69826a]" />
+                  <span>Interrogantes de Autenticidad para el Creador</span>
+                </div>
+                <ul className="space-y-2.5">
+                  {activePillar.guideQuestions.map((q, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-[#555555] font-sans leading-relaxed">
+                      <span className="bg-[#69826a] text-white px-2 py-0.5 rounded-full text-xs font-bold shrink-0 mt-0.5">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span>{q}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         )}
